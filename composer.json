@@ -1,0 +1,13 @@
+{
+    "name": "fewald/ebay-collector-test-case",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sergey Zaika",
+            "email": "sergey.s.zaika@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
