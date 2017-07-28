@@ -7,14 +7,12 @@ use ProductFeedModule\Search\SearchRequest;
 
 class EbayFeedProvider implements InterfaceFeedProvider
 {
-    protected $endpoint = 'http://svcs.sandbox.ebay.com/services/search/FindingService/v1';
-    protected $version = '1.0.0';
-    protected $appId = 'WandoInt-217b-42d8-a699-e79808dd505e';
-    protected $responseDataFormat = 'JSON';
+    /** @var  string */
+    protected $appId;
 
-    public function __construct()
+    public function __construct($appId)
     {
-
+        $this->appId = $appId;
     }
 
     /**

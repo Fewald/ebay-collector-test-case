@@ -15,12 +15,8 @@ class ProductFeedServiceProvider implements ServiceProviderInterface, BootablePr
 {
     public function boot(Application $app)
     {
-        $app->get('/', 'frontend.controller.landing:indexAction')
-            ->bind('frontend.landing.index');
-
-        $app->get('/search', function ($name) use ($app) {
-            return 'Hello ' . $app->escape($name);
-        });
+        $app->get('/', 'feed.controller:searchAction')
+            ->bind('feed.index');
     }
 
     public function register(Container $pimple)
@@ -30,7 +26,9 @@ class ProductFeedServiceProvider implements ServiceProviderInterface, BootablePr
         };
 
         $pimple['feed.provider.ebay'] = function (Application $app) {
-            return new EbayFeedProvider();
+            return new EbayFeedProvider(
+                $app['container']['config']['ebay']['app-id']
+            );
         };
         /**
          * @param Application $app
