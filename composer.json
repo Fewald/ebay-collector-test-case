@@ -1,0 +1,22 @@
+{
+  "name": "fewald/ebay-product-feed",
+  "authors": [
+    {
+      "name": "Sergey Zaika",
+      "email": "sergey.s.zaika@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "dts/ebay-sdk-php": "^13.0",
+    "silex/silex": "^2.2",
+    "monolog/monolog": "1.22.1",
+    "saxulum/config-service-provider": "2.0.1",
+    "symfony/yaml": "3.2.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}
